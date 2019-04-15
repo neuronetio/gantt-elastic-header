@@ -1,0 +1,38 @@
+{
+  "name": "gantt-elastic-header",
+  "version": "0.1.0",
+  "description": "default header for gantt-elastic",
+  "main": "src/Header.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neuronetio/gantt-elastic-header.git"
+  },
+  "keywords": [
+    "gantt",
+    "gantt-elastic",
+    "header"
+  ],
+  "author": "neuronet.io@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neuronetio/gantt-elastic-header/issues"
+  },
+  "homepage": "https://github.com/neuronetio/gantt-elastic-header#readme",
+  "dependencies": {
+    "vue": "^2.6.10",
+    "vue-slider-component": "^3.0.26",
+    "vue-switches": "^2.0.1"
+  },
+  "devDependencies": {
+    "css-loader": "^2.1.1",
+    "terser-webpack-plugin": "^1.2.3",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0"
+  }
+}
