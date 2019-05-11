@@ -7,60 +7,60 @@
  */
 -->
 <template>
-  <div class="gantt-elastic__header" :style="{ ...root.style['header'] }">
+  <div class="gantt-elastic__header" :style="{ ...style['header'] }">
     <div
       class="gantt-elastic__header-title"
-      :style="{ ...root.style['header-title'] }"
+      :style="{ ...style['header-title'] }"
     >
       <div
         class="gantt-elastic__header-title--text"
-        :style="{ ...root.style['header-title--text'] }"
-        v-if="!root.state.options.title.html"
+        :style="{ ...style['header-title--text'] }"
+        v-if="!opts.title.html"
       >
-        {{ root.state.options.title.label }}
+        {{ opts.title.label }}
       </div>
       <div
         class="gantt-elastic__header-title--html"
-        :style="{ ...root.style['header-title--html'] }"
-        v-if="root.state.options.title.html"
-        v-html="root.state.options.title.label"
+        :style="{ ...style['header-title--html'] }"
+        v-if="opts.title.html"
+        v-html="opts.title.label"
       ></div>
     </div>
     <div
-      class="gantt-elastic__header-options"
-      :style="{ ...root.style['header-options'] }"
+      class="gantt-elastic__header-opts"
+      :style="{ ...style['header-opts'] }"
     >
       <component
         v-if="beforeOptionsIsComponent"
-        :is="root.state.options.slots.header.beforeOptions"
+        :is="opts.slots.header.beforeOptions"
       ></component>
       <div
         class="gantt-elastic__slot-header-beforeOptions"
-        :style="{ ...root.style['slot-header-beforeOptions'] }"
+        :style="{ ...style['slot-header-beforeOptions'] }"
         v-if="beforeOptionsIsHtml"
-        v-html="root.state.options.slots.header.beforeOptions"
+        v-html="opts.slots.header.beforeOptions"
       ></div>
       <button
         class="gantt-elastic__header-btn-recenter"
-        :style="{ ...root.style['header-btn-recenter'] }"
+        :style="{ ...style['header-btn-recenter'] }"
         @click.prevent="recenterPosition"
       >
-        {{ root.state.options.locale.Now }}
+        {{ opts.locale.Now }}
       </button>
       <label
         class="gantt-elastic__header-label"
-        :style="{ ...root.style['header-label'] }"
+        :style="{ ...style['header-label'] }"
       >
-        {{ root.state.options.locale["X-Scale"] }}
+        {{ opts.locale["X-Scale"] }}
         <div
           class="gantt-elastic__header-slider-wrapper"
-          :style="{ ...root.style['header-slider-wrapper'] }"
+          :style="{ ...style['header-slider-wrapper'] }"
         >
           <vue-slider
             class="gantt-elastic__header-slider"
             tooltip="none"
-            :process-style="{ ...root.style['header-slider--process'] }"
-            :slider-style="{ ...root.style['header-slider--slider'] }"
+            :process-style="{ ...style['header-slider--process'] }"
+            :slider-style="{ ...style['header-slider--slider'] }"
             v-model="scale"
             :max="24"
             :min="2"
@@ -70,18 +70,18 @@
       </label>
       <label
         class="gantt-elastic__header-label"
-        :style="{ ...root.style['header-label'] }"
+        :style="{ ...style['header-label'] }"
       >
-        {{ root.state.options.locale["Y-Scale"] }}
+        {{ opts.locale["Y-Scale"] }}
         <div
           class="gantt-elastic__header-slider-wrapper"
-          :style="{ ...root.style['header-slider-wrapper'] }"
+          :style="{ ...style['header-slider-wrapper'] }"
         >
           <vue-slider
             class="gantt-elastic__header-slider"
             tooltip="none"
-            :process-style="{ ...root.style['header-slider--process'] }"
-            :slider-style="{ ...root.style['header-slider--slider'] }"
+            :process-style="{ ...style['header-slider--process'] }"
+            :slider-style="{ ...style['header-slider--slider'] }"
             v-model="height"
             :max="100"
             :min="7"
@@ -91,18 +91,18 @@
       </label>
       <label
         class="gantt-elastic__header-label"
-        :style="{ ...root.style['header-label'] }"
+        :style="{ ...style['header-label'] }"
       >
-        {{ root.state.options.locale["Before/After"] }}
+        {{ opts.locale["Before/After"] }}
         <div
           class="gantt-elastic__header-slider-wrapper"
-          :style="{ ...root.style['header-slider-wrapper'] }"
+          :style="{ ...style['header-slider-wrapper'] }"
         >
           <vue-slider
             class="gantt-elastic__header-slider"
             tooltip="none"
-            :process-style="{ ...root.style['header-slider--process'] }"
-            :slider-style="{ ...root.style['header-slider--slider'] }"
+            :process-style="{ ...style['header-slider--process'] }"
+            :slider-style="{ ...style['header-slider--slider'] }"
             v-model="scope"
             :max="31"
             :min="0"
@@ -112,18 +112,18 @@
       </label>
       <label
         class="gantt-elastic__header-label"
-        :style="{ ...root.style['header-label'] }"
+        :style="{ ...style['header-label'] }"
       >
-        {{ root.state.options.locale["Task list width"] }}
+        {{ opts.locale["Task list width"] }}
         <div
           class="gantt-elastic__header-slider-wrapper"
-          :style="{ ...root.style['header-slider-wrapper'] }"
+          :style="{ ...style['header-slider-wrapper'] }"
         >
           <vue-slider
             class="gantt-elastic__header-slider"
             tooltip="none"
-            :process-style="{ ...root.style['header-slider--process'] }"
-            :slider-style="{ ...root.style['header-slider--slider'] }"
+            :process-style="{ ...style['header-slider--process'] }"
+            :slider-style="{ ...style['header-slider--slider'] }"
             v-model="divider"
             :max="100"
             :min="0"
@@ -133,14 +133,14 @@
       </label>
       <label
         class="gantt-elastic__header-task-list-switch--wrapper"
-        :style="{ ...root.style['header-task-list-switch--label'] }"
+        :style="{ ...style['header-task-list-switch--label'] }"
       >
         <switches
           class="gantt-elastic__header-task-list-switch"
-          :style="{ ...root.style['header-task-list-switch'] }"
+          :style="{ ...style['header-task-list-switch'] }"
           v-model="root.state.options.taskList.display"
         ></switches>
-        {{ root.state.options.locale["Display task list"] }}
+        {{ opts.locale["Display task list"] }}
       </label>
     </div>
   </div>
@@ -150,33 +150,107 @@
 import vueSlider from "vue-slider-component";
 import "vue-slider-component/theme/default.css";
 import Switches from "vue-switches";
+
+const defaultStyle = {
+  header: {
+    "font-family": fontFamily,
+    margin: "0px auto",
+    background: "#f3f5f747",
+    padding: "10px",
+    overflow: "hidden",
+    clear: "both",
+    display: "flex",
+    "justify-content": "space-between"
+  },
+  "header-title": { float: "left" },
+  "header-options": { float: "right" },
+  "header-title--text": {
+    "font-size": "20px",
+    "vertical-align": "middle",
+    "font-weight": "400",
+    "line-height": "35px",
+    "padding-left": "22px",
+    "letter-spacing": "1px"
+  },
+  "header-title--html": {
+    "font-size": "20px",
+    "vertical-align": "middle",
+    "font-weight": "400",
+    "line-height": "35px",
+    "padding-left": "22px",
+    "letter-spacing": "1px"
+  },
+  "header-btn-recenter": {
+    background: "#95A5A6",
+    border: "none",
+    outline: "none",
+    cursor: "pointer",
+    color: "white",
+    "border-radius": "3px",
+    "margin-right": "27px",
+    "font-size": "16px",
+    padding: "8px 12px"
+  },
+  "header-slider": {},
+  "header-slider-wrapper": {
+    display: "inline-block",
+    "vertical-align": "middle"
+  },
+  "header-slider--slider": {},
+  "header-slider--process": { background: "#ccc" },
+  "header-task-list-switch--label": {},
+  "header-task-list-switch": {
+    margin: "0px 15px",
+    "vertical-align": "middle"
+  },
+  "header-label": {}
+};
+const defaultOptions = {
+  title: {
+    label: "gantt-elastic",
+    html: false
+  },
+  locale: {
+    Now: "Now",
+    "X-Scale": "Zoom-X",
+    "Y-Scale": "Zoom-Y",
+    "Task list width": "Task list",
+    "Before/After": "Expand",
+    "Display task list": "Show task list"
+  }
+};
 export default {
   name: "GanttHeader",
   components: {
     vueSlider,
     Switches
   },
+  props: ["options", "dynamicStyle"],
   inject: ["root"],
   data() {
     return {
       scaleTimeoutId: null,
       firstScale: false,
-      localScale: this.root.state.options.times.timeZoom,
-      localHeight: this.root.state.options.row.height,
-      localBefore: this.root.state.options.scope.before,
-      localPercent: this.root.state.options.taskList.percent,
+      localScale: this.root.options.times.timeZoom,
+      localHeight: this.root.options.row.height,
+      localBefore: this.root.options.scope.before,
+      localPercent: this.root.options.taskList.percent,
       sliderOptions: {
         xScale: {
-          value: this.root.state.options.times.timeZoom
+          value: this.root.options.times.timeZoom
         }
-      }
+      },
+      style: {},
+      opts: {}
     };
   },
   created() {
-    this.localScale = this.root.state.options.times.timeZoom;
-    this.localHeight = this.root.state.options.row.height;
-    this.localBefore = this.root.state.options.scope.before;
-    this.localPercent = this.root.state.options.taskList.percent;
+    this.localScale = this.root.options.times.timeZoom;
+    this.localHeight = this.root.options.row.height;
+    this.localBefore = this.root.options.scope.before;
+    this.localPercent = this.root.options.taskList.percent;
+    this.style = this.root.mergeDeep({}, defaultStyle, this.dynamicStyle);
+    this.opts = this.root.mergeDeep({}, defaultOptions, this.options);
   },
   methods: {
     getImage() {
@@ -215,7 +289,7 @@ export default {
      * @returns {bool}
      */
     beforeOptionsIsComponent() {
-      const headerSlot = this.root.state.options.slots.header;
+      const headerSlot = this.options.slots.header;
       if (
         typeof headerSlot.beforeOptions === "object" &&
         !Array.isArray(headerSlot.beforeOptions)
@@ -229,9 +303,7 @@ export default {
      * @returns {bool}
      */
     beforeOptionsIsHtml() {
-      if (
-        typeof this.root.state.options.slots.header.beforeOptions === "string"
-      ) {
+      if (typeof this.options.slots.header.beforeOptions === "string") {
         return true;
       }
       return false;
