@@ -27,8 +27,8 @@
       ></div>
     </div>
     <div
-      class="gantt-elastic__header-opts"
-      :style="{ ...style['header-opts'] }"
+      class="gantt-elastic__header-options"
+      :style="{ ...style['header-options'] }"
     >
       <component
         v-if="beforeOptionsIsComponent"

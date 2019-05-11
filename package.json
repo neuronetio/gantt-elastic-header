@@ -24,7 +24,7 @@
   "homepage": "https://github.com/neuronetio/gantt-elastic-header#readme",
   "dependencies": {
     "vue": "^2.6.10",
-    "vue-slider-component": "^3.0.27",
+    "vue-slider-component": "^3.0.31",
     "vue-switches": "^2.0.1"
   },
   "devDependencies": {
@@ -32,7 +32,7 @@
     "terser-webpack-plugin": "^1.2.3",
     "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.0"
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
   }
 }
