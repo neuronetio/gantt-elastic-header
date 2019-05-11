@@ -30,16 +30,6 @@
       class="gantt-elastic__header-options"
       :style="{ ...style['header-options'] }"
     >
-      <component
-        v-if="beforeOptionsIsComponent"
-        :is="opts.slots.header.beforeOptions"
-      ></component>
-      <div
-        class="gantt-elastic__slot-header-beforeOptions"
-        :style="{ ...style['slot-header-beforeOptions'] }"
-        v-if="beforeOptionsIsHtml"
-        v-html="opts.slots.header.beforeOptions"
-      ></div>
       <button
         class="gantt-elastic__header-btn-recenter"
         :style="{ ...style['header-btn-recenter'] }"
@@ -59,6 +49,7 @@
           <vue-slider
             class="gantt-elastic__header-slider"
             tooltip="none"
+            :style="{ ...style['header-slider'] }"
             :process-style="{ ...style['header-slider--process'] }"
             :slider-style="{ ...style['header-slider--slider'] }"
             v-model="scale"
@@ -166,9 +157,6 @@ const defaultStyle = {
   },
   "header-title": { float: "left" },
   "header-options": { float: "right" },
-  "header-beforeOptions": {
-    display: "inline-block"
-  },
   "header-title--text": {
     "font-size": "20px",
     "vertical-align": "middle",
