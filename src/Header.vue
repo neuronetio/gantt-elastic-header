@@ -153,7 +153,6 @@ import Switches from "vue-switches";
 
 const defaultStyle = {
   header: {
-    "font-family": fontFamily,
     margin: "0px auto",
     background: "#f3f5f747",
     padding: "10px",
