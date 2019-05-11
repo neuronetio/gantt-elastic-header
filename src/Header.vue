@@ -244,11 +244,11 @@ export default {
     };
   },
   created() {
-    this.localScale = this.root.options.times.timeZoom;
-    this.localHeight = this.root.options.row.height;
-    this.localBefore = this.root.options.scope.before;
-    this.localPercent = this.root.options.taskList.percent;
-    this.sliderOptions.xScale.value = this.root.options.times.timeZoom;
+    this.localScale = this.root.state.options.times.timeZoom;
+    this.localHeight = this.root.state.options.row.height;
+    this.localBefore = this.root.state.options.scope.before;
+    this.localPercent = this.root.state.options.taskList.percent;
+    this.sliderOptions.xScale.value = this.root.state.options.times.timeZoom;
     this.style = this.root.mergeDeep({}, defaultStyle, this.dynamicStyle);
     this.opts = this.root.mergeDeep({}, defaultOptions, this.options);
   },
