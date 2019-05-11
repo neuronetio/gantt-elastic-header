@@ -59,6 +59,8 @@
           <vue-slider
             class="gantt-elastic__header-slider"
             tooltip="none"
+            :process-style="{ ...style['header-slider--process'] }"
+            :slider-style="{ ...style['header-slider--slider'] }"
             v-model="scale"
             :max="24"
             :min="2"
@@ -78,6 +80,8 @@
           <vue-slider
             class="gantt-elastic__header-slider"
             tooltip="none"
+            :process-style="{ ...style['header-slider--process'] }"
+            :slider-style="{ ...style['header-slider--slider'] }"
             v-model="height"
             :max="100"
             :min="7"
@@ -97,6 +101,8 @@
           <vue-slider
             class="gantt-elastic__header-slider"
             tooltip="none"
+            :process-style="{ ...style['header-slider--process'] }"
+            :slider-style="{ ...style['header-slider--slider'] }"
             v-model="scope"
             :max="31"
             :min="0"
@@ -116,6 +122,9 @@
           <vue-slider
             class="gantt-elastic__header-slider"
             tooltip="none"
+            :style="{ ...style['header-slider'] }"
+            :process-style="{ ...style['header-slider--process'] }"
+            :slider-style="{ ...style['header-slider--slider'] }"
             v-model="divider"
             :max="100"
             :min="0"
@@ -155,6 +164,9 @@ const defaultStyle = {
   },
   "header-title": { float: "left" },
   "header-options": { float: "right" },
+  "header-beforeOptions": {
+    display: "inline-block"
+  },
   "header-title--text": {
     "font-size": "20px",
     "vertical-align": "middle",
@@ -182,14 +194,16 @@ const defaultStyle = {
     "font-size": "16px",
     padding: "8px 12px"
   },
-  "header-slider": {},
+  "header-slider": {
+    "box-sizing": "content-box"
+  },
   "header-slider-wrapper": {
     display: "inline-block",
     "vertical-align": "middle"
   },
-  "header-slider--slider": {},
-  "header-slider--process": { background: "#ccc" },
-  "header-task-list-switch--label": {},
+  "header-slider--slider": { "box-sizing": "content-box" },
+  "header-slider--process": { background: "#ccc", "box-sizing": "content-box" },
+  "header-task-list-switch--label": { "box-sizing": "content-box" },
   "header-task-list-switch": {
     margin: "0px 15px",
     "vertical-align": "middle"
