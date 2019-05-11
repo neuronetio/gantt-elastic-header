@@ -1,6 +1,6 @@
 {
   "name": "gantt-elastic-header",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "default header for gantt-elastic",
   "main": "src/Header.vue",
   "scripts": {
