@@ -59,8 +59,6 @@
           <vue-slider
             class="gantt-elastic__header-slider"
             tooltip="none"
-            :process-style="{ ...style['header-slider--process'] }"
-            :slider-style="{ ...style['header-slider--slider'] }"
             v-model="scale"
             :max="24"
             :min="2"
@@ -80,8 +78,6 @@
           <vue-slider
             class="gantt-elastic__header-slider"
             tooltip="none"
-            :process-style="{ ...style['header-slider--process'] }"
-            :slider-style="{ ...style['header-slider--slider'] }"
             v-model="height"
             :max="100"
             :min="7"
@@ -101,8 +97,6 @@
           <vue-slider
             class="gantt-elastic__header-slider"
             tooltip="none"
-            :process-style="{ ...style['header-slider--process'] }"
-            :slider-style="{ ...style['header-slider--slider'] }"
             v-model="scope"
             :max="31"
             :min="0"
@@ -122,8 +116,6 @@
           <vue-slider
             class="gantt-elastic__header-slider"
             tooltip="none"
-            :process-style="{ ...style['header-slider--process'] }"
-            :slider-style="{ ...style['header-slider--slider'] }"
             v-model="divider"
             :max="100"
             :min="0"
