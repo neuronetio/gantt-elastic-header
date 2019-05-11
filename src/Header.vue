@@ -230,13 +230,13 @@ export default {
     return {
       scaleTimeoutId: null,
       firstScale: false,
-      localScale: this.root.options.times.timeZoom,
-      localHeight: this.root.options.row.height,
-      localBefore: this.root.options.scope.before,
-      localPercent: this.root.options.taskList.percent,
+      localScale: 0,
+      localHeight: 0,
+      localBefore: 0,
+      localPercent: 0,
       sliderOptions: {
         xScale: {
-          value: this.root.options.times.timeZoom
+          value: 0
         }
       },
       style: {},
@@ -248,6 +248,7 @@ export default {
     this.localHeight = this.root.options.row.height;
     this.localBefore = this.root.options.scope.before;
     this.localPercent = this.root.options.taskList.percent;
+    this.sliderOptions.xScale.value = this.root.options.times.timeZoom;
     this.style = this.root.mergeDeep({}, defaultStyle, this.dynamicStyle);
     this.opts = this.root.mergeDeep({}, defaultOptions, this.options);
   },
