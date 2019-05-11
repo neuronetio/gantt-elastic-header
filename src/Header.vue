@@ -80,6 +80,7 @@
           <vue-slider
             class="gantt-elastic__header-slider"
             tooltip="none"
+            :style="{ ...style['header-slider'] }"
             :process-style="{ ...style['header-slider--process'] }"
             :slider-style="{ ...style['header-slider--slider'] }"
             v-model="height"
@@ -101,6 +102,7 @@
           <vue-slider
             class="gantt-elastic__header-slider"
             tooltip="none"
+            :style="{ ...style['header-slider'] }"
             :process-style="{ ...style['header-slider--process'] }"
             :slider-style="{ ...style['header-slider--slider'] }"
             v-model="scope"
@@ -202,7 +204,7 @@ const defaultStyle = {
     "vertical-align": "middle"
   },
   "header-slider--slider": { "box-sizing": "content-box" },
-  "header-slider--process": { background: "#ccc", "box-sizing": "content-box" },
+  "header-slider--process": { "box-sizing": "content-box" },
   "header-task-list-switch--label": { "box-sizing": "content-box" },
   "header-task-list-switch": {
     margin: "0px 15px",
